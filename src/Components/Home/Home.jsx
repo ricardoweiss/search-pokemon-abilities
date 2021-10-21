@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import sadPikachu from '../../assets/sadPikachu.png'
+
 import {
     Button,
     ButtonText, CapitalizedTitle,
@@ -11,6 +12,7 @@ import {
 import Abilities from "./Abilities/Abilities";
 import {MainTitle, Text} from "../Common/Texts.styles";
 import Loading from "../Common/Loading/Loading";
+import Error from "../Common/Error/Error";
 
 function Home() {
     const [inputValue, setInputValue] = useState('')
@@ -49,7 +51,7 @@ function Home() {
                 setLoading(false);
             })
             .catch(e => {
-                setError(e)
+                setError('Oops, something went wrong, are you sure this pokemon exists?')
                 setLoading(false);
             })
     }
@@ -66,10 +68,7 @@ function Home() {
                 <ButtonText>Search</ButtonText>
             </Button>
             {error && (
-                <ErrorContainer>
-                    <ErrorImage src={sadPikachu} alt={'sad pikachu'}/>
-                    <Text>Oops, something went wrong, are you sure this pokemon exists?</Text>
-                </ErrorContainer>
+                <Error errorImage={sadPikachu} errorMessage={error}/>
             )}
             {loading && (
                 <Loading/>
