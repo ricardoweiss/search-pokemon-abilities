@@ -20,11 +20,6 @@ export const Input = styled.input`
   margin-bottom: 32px;
 `;
 
-export const Label = styled.label`
-  color: indianred;
-  font-size: 10px;
-`;
-
 export const Button = styled.button`
   width: 120px;
   display: flex;
@@ -33,12 +28,33 @@ export const Button = styled.button`
   height: 40px;
   border-radius: 10px;
   border: 1px solid grey;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 `;
 
 export const ButtonText = styled.p`
   font-size: 16px;
+`;
+
+export const ErrorContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  max-height: 500px;
+`;
+
+export const ErrorImage = styled.img`
+  height: 40%;
+  max-height: 200px;
+  width: auto;
+  margin-bottom: 32px;
+`;
+
+export const ErrorText = styled.h3`
+  width: 80%;
+  text-align: center;
 `;
 
 export const LoadingContainer = styled.div`

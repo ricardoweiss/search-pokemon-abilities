@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 import meowLoader from '../../assets/meowLoader.gif'
+import sadPikachu from '../../assets/sadPikachu.png'
 import {
     Button,
     ButtonText,
-    Container,
+    Container, ErrorContainer, ErrorImage, ErrorText,
     HomeTitle,
     Input,
-    Label,
     LoadingContainer, LoadingGIF, LoadingText,
     PokemonImage,
     Title
@@ -56,6 +56,12 @@ function Home() {
             <Button onClick={fetchPokemon}>
                 <ButtonText>Search</ButtonText>
             </Button>
+            {error && (
+                <ErrorContainer>
+                    <ErrorImage src={sadPikachu} alt={'sad pikachu'}/>
+                    <ErrorText>Oops, something went wrong, are you sure this pokemon exists?</ErrorText>
+                </ErrorContainer>
+            )}
             {loading && (
                 <LoadingContainer>
                     <LoadingGIF src={meowLoader} alt="meow spinner" />
