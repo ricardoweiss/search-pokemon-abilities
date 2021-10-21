@@ -10,6 +10,7 @@ export const Container = styled.section`
 export const HomeTitle = styled.h2`
  width: 80%;
  text-align: center;
+  font-family: 'lato', sans-serif;
 `;
 
 export const Input = styled.input`
