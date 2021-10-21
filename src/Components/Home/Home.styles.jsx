@@ -41,6 +41,22 @@ export const ButtonText = styled.p`
   font-size: 16px;
 `;
 
+export const LoadingContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const LoadingGIF = styled.img`
+  height: 100px;
+  width: auto;
+`;
+
+export const LoadingText = styled.p`
+  font-size: 16px;
+`;
+
 export const PokemonImage = styled.img`
   height: 200px;
   width: auto;

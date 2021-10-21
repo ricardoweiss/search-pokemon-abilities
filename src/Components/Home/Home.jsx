@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
-import {Button, ButtonText, Container, HomeTitle, Input, Label, PokemonImage, Title} from "./Home.styles";
+
+import meowLoader from '../../assets/meowLoader.gif'
+import {
+    Button,
+    ButtonText,
+    Container,
+    HomeTitle,
+    Input,
+    Label,
+    LoadingContainer, LoadingGIF, LoadingText,
+    PokemonImage,
+    Title
+} from "./Home.styles";
 import Abilities from "./Abilities/Abilities";
 
 function Home() {
@@ -7,12 +19,14 @@ function Home() {
     const [pokemonAbilities, setPokemonAbilities] = useState([])
     const [pokemonImage, setPokemonImage] = useState('')
     const [pokemon, setPokemon] = useState('')
-    const [loading, setLoading] = useState('')
+    const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
 
     const emptyList = pokemonAbilities.length <= 0
 
     function fetchPokemon() {
+        setPokemonAbilities([])
+        setLoading(true);
         fetch(`https://pokeapi.co/api/v2/pokemon/${inputValue}`)
             .then((response) => {
             return response.json();
@@ -23,8 +37,12 @@ function Home() {
                 setPokemon(inputValue)
                 setPokemonImage(response['sprites'].front_default)
                 setInputValue('')
+                setLoading(false);
             })
-            .catch(e => setError(e))
+            .catch(e => {
+                setError(e)
+                setLoading(false);
+            })
     }
 
     function onChangeHandler(e) {
@@ -35,18 +53,24 @@ function Home() {
         <Container>
             <HomeTitle>Please type a pokemon name below to see their abilities</HomeTitle>
             <Input type="text" value={inputValue} onChange={onChangeHandler}/>
-            <Label>{error && 'Pokemon não encontrado'}</Label>
             <Button onClick={fetchPokemon}>
                 <ButtonText>Search</ButtonText>
             </Button>
-            {!emptyList && (
+            {loading && (
+                <LoadingContainer>
+                    <LoadingGIF src={meowLoader} alt="meow spinner" />
+                    <LoadingText>carregando...</LoadingText>
+                </LoadingContainer>
+            )}
+            {!emptyList && !loading && (
                 <>
                     <PokemonImage src={pokemonImage} alt="pokemon image"/>
                     <Title>{pokemon} Abilities</Title>
+                    <Abilities abilities={pokemonAbilities}/>
                 </>
             )}
 
-            <Abilities abilities={pokemonAbilities}/>
+
         </Container>
     )
 }
