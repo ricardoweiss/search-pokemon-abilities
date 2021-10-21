@@ -7,8 +7,8 @@
 
 
 
-This interface was created by me, Ricardo Weiss, to attend for a job interview at ZRP/Liber. This app lets you follow the
-search for a pokemon abilities.
+This interface was created by me, Ricardo Weiss, to attend for a job interview at ZRP/Liber. This app lets you
+search for a pokemon and see their abilities.
 
 ## Prerequisites
 
