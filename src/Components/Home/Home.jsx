@@ -24,6 +24,12 @@ function Home() {
 
     const emptyList = pokemonAbilities.length <= 0
 
+    function compareAbilities(a, b) {
+        const abilityA = a.ability.name.toUpperCase()
+        const abilityB = b.ability.name.toUpperCase()
+        return (abilityA < abilityB) ? -1 : (abilityA > abilityB) ? 1 : 0;
+    }
+
     function fetchPokemon() {
         if (inputValue === '') {
             return;
@@ -37,8 +43,8 @@ function Home() {
             return response.json();
             })
             .then(response => {
-                console.log(response)
-                setPokemonAbilities(response['abilities']);
+                const sortedResponse = response['abilities'].sort(compareAbilities);
+                setPokemonAbilities(sortedResponse);
                 setPokemon(inputValue)
                 setPokemonImage(response['sprites'].front_default)
                 setInputValue('')
@@ -76,7 +82,7 @@ function Home() {
             {!emptyList && !loading && (
                 <>
                     <PokemonImage src={pokemonImage} alt="pokemon image"/>
-                    <CapitalizedTitle>{pokemon} Abilities</CapitalizedTitle>
+                    <CapitalizedTitle>{pokemon} Abilities:</CapitalizedTitle>
                     <Abilities abilities={pokemonAbilities}/>
                 </>
             )}
