@@ -39,7 +39,7 @@ Follow the instructions in [phoenixnap.com/kb/install-node-js-npm-on-windows](ht
 
 ## Setup
 
-After installing Node.js, npm, clone the repository and go to the server folder:
+After installing Node.js, npm, clone the repository and go to the project folder:
 
 `git clone https://github.com/ricardoweiss/search-pokemon-abilities.git`
 
