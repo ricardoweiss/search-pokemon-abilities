@@ -51,7 +51,9 @@ and run:
 
 Wait for the installation to finish.
 
+And run:
 
+`npm start`
 
 # Features
 - Full responsive design, runs in any screen with width equals or bigger than 320px (Iphone 5/SE).
