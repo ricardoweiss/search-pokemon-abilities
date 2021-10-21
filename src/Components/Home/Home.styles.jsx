@@ -49,6 +49,7 @@ export const Button = styled.button`
   justify-content: center;
   width: 160px;
   height: 30px;
+  cursor: pointer;
   margin-bottom: 32px;
   padding: 1.5rem 3.125rem;
   background-color: #3498db;
