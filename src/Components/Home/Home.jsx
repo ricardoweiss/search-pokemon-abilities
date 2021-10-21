@@ -25,9 +25,11 @@ function Home() {
     const emptyList = pokemonAbilities.length <= 0
 
     function fetchPokemon() {
+        setError(false)
         setPokemonAbilities([])
         setLoading(true);
-        fetch(`https://pokeapi.co/api/v2/pokemon/${inputValue}`)
+        const lowerCaseValue = inputValue.toLowerCase()
+        fetch(`https://pokeapi.co/api/v2/pokemon/${lowerCaseValue}`)
             .then((response) => {
             return response.json();
             })

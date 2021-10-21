@@ -62,14 +62,18 @@ export const LoadingContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 50vh;
+  max-height: 500px;
 `;
 
 export const LoadingGIF = styled.img`
-  height: 100px;
+  height: 40%;
+  max-height: 200px;
   width: auto;
+  margin-bottom: 32px;
 `;
 
-export const LoadingText = styled.p`
+export const LoadingText = styled.h3`
   font-size: 16px;
 `;
 
@@ -79,5 +83,5 @@ export const PokemonImage = styled.img`
 `;
 
 export const Title = styled.h2`
-  
+  text-transform: capitalize;
 `;
