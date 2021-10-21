@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 
-import meowLoader from '../../assets/meowLoader.gif'
 import sadPikachu from '../../assets/sadPikachu.png'
 import {
     Button,
     ButtonText, CapitalizedTitle,
     Container, ErrorContainer, ErrorImage,
     Input,
-    LoadingContainer, LoadingGIF, LoadingText,
     PokemonImage,
-    Title
 } from "./Home.styles";
 import Abilities from "./Abilities/Abilities";
 import {MainTitle, Text} from "../Common/Texts.styles";
+import Loading from "../Common/Loading/Loading";
 
 function Home() {
     const [inputValue, setInputValue] = useState('')
@@ -74,10 +72,7 @@ function Home() {
                 </ErrorContainer>
             )}
             {loading && (
-                <LoadingContainer>
-                    <LoadingGIF src={meowLoader} alt="meow spinner" />
-                    <LoadingText>carregando...</LoadingText>
-                </LoadingContainer>
+                <Loading/>
             )}
             {!emptyList && !loading && (
                 <>
