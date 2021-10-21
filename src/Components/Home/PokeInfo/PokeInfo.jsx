@@ -1,6 +1,6 @@
-import {CapitalizedTitle, PokemonImage} from "../../../screens/Home/Home.styles";
 import Abilities from "../Abilities/Abilities";
 import React from "react";
+import {CapitalizedTitle, PokemonImage} from "./PokeInfo.styles";
 
 function PokeInfo({pokemon, pokemonAbilities, pokemonImage}) {
     return (

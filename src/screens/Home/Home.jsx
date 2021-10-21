@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import sadPikachu from '../../assets/sadPikachu.png'
 import {
-    CapitalizedTitle,
     Container,
     Page,
-    PokemonImage,
 } from "./Home.styles";
-import Abilities from "../../Components/Home/Abilities/Abilities";
 import Loading from "../../Components/Common/Loading/Loading";
 import Error from "../../Components/Common/Error/Error";
 import Searchbar from "../../Components/Home/Searchbar/Searchbar";
@@ -84,7 +81,6 @@ function Home() {
                 )}
             </Container>
         </Page>
-
     )
 }
 

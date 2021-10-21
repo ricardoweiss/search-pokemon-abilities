@@ -1,6 +1,6 @@
-import {HomeTitle, Input} from "../../../screens/Home/Home.styles";
 import Button from "../../Common/Button/Button";
 import React from "react";
+import {HomeTitle, Input} from "./Searchbar.styles";
 
 function Searchbar({onKeyUp, fetchPokemon, inputValue, onChangeHandler}) {
     return (
