@@ -43,6 +43,8 @@ After installing Node.js, npm, clone the repository and go to the server folder:
 
 `git clone https://github.com/ricardoweiss/search-pokemon-abilities.git`
 
+`cd search-pokemon-abilities`
+
 and run:
 
 `npm install`
