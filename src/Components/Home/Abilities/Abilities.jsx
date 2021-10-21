@@ -6,7 +6,7 @@ function Abilities({abilities}) {
     return abilities.map((abilities) => {
             const { ability } = abilities;
             const { name } = ability;
-            return <Ability name={name}/>;
+            return <Ability key={name} name={name}/>;
         })
 }
 

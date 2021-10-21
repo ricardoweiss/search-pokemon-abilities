@@ -4,7 +4,7 @@ import {
     Button,
     ButtonText, CapitalizedTitle,
     Container, HomeTitle,
-    Input,
+    Input, Page,
     PokemonImage,
 } from "./Home.styles";
 import Abilities from "./Abilities/Abilities";
@@ -60,28 +60,31 @@ function Home() {
     }
 
     return (
-        <Container>
-            <HomeTitle>Please type a pokemon name below to see their abilities</HomeTitle>
-            <Input placeholder={'Type here'} type="text" value={inputValue} onChange={onChangeHandler}/>
-            <Button onClick={fetchPokemon}>
-                <ButtonText>Search</ButtonText>
-            </Button>
-            {error && (
-                <Error errorImage={sadPikachu} errorMessage={error}/>
-            )}
-            {loading && (
-                <Loading/>
-            )}
-            {!emptyList && !loading && (
-                <>
-                    <PokemonImage src={pokemonImage} alt="pokemon image"/>
-                    <CapitalizedTitle>{pokemon} Abilities:</CapitalizedTitle>
-                    <Abilities abilities={pokemonAbilities}/>
-                </>
-            )}
+        <Page>
+            <Container>
+                <HomeTitle>Please type a pokemon name below to see their abilities</HomeTitle>
+                <Input placeholder={'Type here'} type="text" value={inputValue} onChange={onChangeHandler}/>
+                <Button onClick={fetchPokemon}>
+                    <ButtonText>Search</ButtonText>
+                </Button>
+                {error && (
+                    <Error errorImage={sadPikachu} errorMessage={error}/>
+                )}
+                {loading && (
+                    <Loading/>
+                )}
+                {!emptyList && !loading && (
+                    <>
+                        <PokemonImage src={pokemonImage} alt="pokemon image"/>
+                        <CapitalizedTitle>{pokemon} Abilities:</CapitalizedTitle>
+                        <Abilities abilities={pokemonAbilities}/>
+                    </>
+                )}
 
 
-        </Container>
+            </Container>
+        </Page>
+
     )
 }
 
