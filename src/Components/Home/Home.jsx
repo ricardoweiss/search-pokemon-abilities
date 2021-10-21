@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import sadPikachu from '../../assets/sadPikachu.png'
 import {
     Button,
@@ -85,8 +85,6 @@ function Home() {
                         <Abilities abilities={pokemonAbilities}/>
                     </>
                 )}
-
-
             </Container>
         </Page>
 
