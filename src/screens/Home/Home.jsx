@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import sadPikachu from '../assets/sadPikachu.png'
+import sadPikachu from '../../assets/sadPikachu.png'
 import {
-    Button,
-    ButtonText, CapitalizedTitle,
+    CapitalizedTitle,
     Container, HomeTitle,
     Input, Page,
     PokemonImage,
 } from "./Home.styles";
-import Abilities from "../Components/Home/Abilities/Abilities";
-import Loading from "../Components/Common/Loading/Loading";
-import Error from "../Components/Common/Error/Error";
+import Abilities from "../../Components/Home/Abilities/Abilities";
+import Loading from "../../Components/Common/Loading/Loading";
+import Error from "../../Components/Common/Error/Error";
+import Button from "../../Components/Common/Button/Button";
 
 function Home() {
     const [inputValue, setInputValue] = useState('')
@@ -68,9 +68,7 @@ function Home() {
             <Container>
                 <HomeTitle>Please type a pokemon name below to see their abilities</HomeTitle>
                 <Input onKeyUp={onKeyUp} placeholder={'Type here'} type="text" value={inputValue} onChange={onChangeHandler}/>
-                <Button onClick={fetchPokemon}>
-                    <ButtonText>Search</ButtonText>
-                </Button>
+                <Button onClickHandler={fetchPokemon}>Search</Button>
                 {error && (
                     <Error errorImage={sadPikachu} errorMessage={error}/>
                 )}
