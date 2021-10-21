@@ -1,8 +1,11 @@
-function Ability({pokemon}) {
+import {AbilityName, AbilityRow} from "./Ability.styles";
+
+function Ability({name}) {
     return (
-        <AbilityColumn>
-
-
-        </AbilityColumn>
+        <AbilityRow>
+            <AbilityName>{name}</AbilityName>
+        </AbilityRow>
     )
 }
+
+export default Ability
