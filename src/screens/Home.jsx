@@ -46,7 +46,6 @@ function Home() {
             return response.json();
             })
             .then(response => {
-                console.log(response)
                 const sortedResponse = response['abilities'].sort(compareAbilities);
                 setPokemonAbilities(sortedResponse);
                 setPokemon(response['name'])
