@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-
 import sadPikachu from '../../assets/sadPikachu.png'
-
 import {
     Button,
     ButtonText, CapitalizedTitle,
-    Container, ErrorContainer, ErrorImage,
+    Container, HomeTitle,
     Input,
     PokemonImage,
 } from "./Home.styles";
@@ -43,9 +41,10 @@ function Home() {
             return response.json();
             })
             .then(response => {
+                console.log(response)
                 const sortedResponse = response['abilities'].sort(compareAbilities);
                 setPokemonAbilities(sortedResponse);
-                setPokemon(inputValue)
+                setPokemon(response['name'])
                 setPokemonImage(response['sprites'].front_default)
                 setInputValue('')
                 setLoading(false);
@@ -62,7 +61,7 @@ function Home() {
 
     return (
         <Container>
-            <MainTitle>Please type a pokemon name below to see their abilities</MainTitle>
+            <HomeTitle>Please type a pokemon name below to see their abilities</HomeTitle>
             <Input placeholder={'Type here'} type="text" value={inputValue} onChange={onChangeHandler}/>
             <Button onClick={fetchPokemon}>
                 <ButtonText>Search</ButtonText>

@@ -7,6 +7,7 @@ export const AbilityRow = styled.div`
   height: 100px;
   justify-content: center;
   width: 80%;
+  max-width: 650px;
   border-bottom: 1px solid black;
   &:last-child {
     border-bottom: none

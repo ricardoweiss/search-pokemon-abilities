@@ -8,6 +8,10 @@ export const Container = styled.section`
   padding: 16px;
 `;
 
+export const HomeTitle = styled(MainTitle)`
+  margin-bottom: 32px;
+`;
+
 export const Input = styled.input`
   width: 80%;
   height: 30px;
