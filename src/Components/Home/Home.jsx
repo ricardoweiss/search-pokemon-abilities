@@ -4,15 +4,15 @@ import meowLoader from '../../assets/meowLoader.gif'
 import sadPikachu from '../../assets/sadPikachu.png'
 import {
     Button,
-    ButtonText,
-    Container, ErrorContainer, ErrorImage, ErrorText,
-    HomeTitle,
+    ButtonText, CapitalizedTitle,
+    Container, ErrorContainer, ErrorImage,
     Input,
     LoadingContainer, LoadingGIF, LoadingText,
     PokemonImage,
     Title
 } from "./Home.styles";
 import Abilities from "./Abilities/Abilities";
+import {MainTitle, Text} from "../Common/Texts.styles";
 
 function Home() {
     const [inputValue, setInputValue] = useState('')
@@ -56,7 +56,7 @@ function Home() {
 
     return (
         <Container>
-            <HomeTitle>Please type a pokemon name below to see their abilities</HomeTitle>
+            <MainTitle>Please type a pokemon name below to see their abilities</MainTitle>
             <Input placeholder={'Type here'} type="text" value={inputValue} onChange={onChangeHandler}/>
             <Button onClick={fetchPokemon}>
                 <ButtonText>Search</ButtonText>
@@ -64,7 +64,7 @@ function Home() {
             {error && (
                 <ErrorContainer>
                     <ErrorImage src={sadPikachu} alt={'sad pikachu'}/>
-                    <ErrorText>Oops, something went wrong, are you sure this pokemon exists?</ErrorText>
+                    <Text>Oops, something went wrong, are you sure this pokemon exists?</Text>
                 </ErrorContainer>
             )}
             {loading && (
@@ -76,7 +76,7 @@ function Home() {
             {!emptyList && !loading && (
                 <>
                     <PokemonImage src={pokemonImage} alt="pokemon image"/>
-                    <Title>{pokemon} Abilities</Title>
+                    <CapitalizedTitle>{pokemon} Abilities</CapitalizedTitle>
                     <Abilities abilities={pokemonAbilities}/>
                 </>
             )}

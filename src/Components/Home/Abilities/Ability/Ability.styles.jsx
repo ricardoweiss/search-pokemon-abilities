@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Text} from "../../../Common/Texts.styles";
 
 export const AbilityRow = styled.div`
   display: flex;
@@ -12,7 +13,5 @@ export const AbilityRow = styled.div`
   }
 `
 
-export const AbilityName = styled.p`
-  font-size: 16px;
-  text-align: center;
+export const AbilityName = styled(Text)`
 `;

@@ -1,16 +1,11 @@
 import styled from "styled-components";
+import {MainTitle, Text} from "../Common/Texts.styles";
 
 export const Container = styled.section`
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 16px;
-`;
-
-export const HomeTitle = styled.h2`
- width: 80%;
- text-align: center;
-  font-family: 'lato', sans-serif;
 `;
 
 export const Input = styled.input`
@@ -70,11 +65,6 @@ export const ErrorImage = styled.img`
   margin-bottom: 32px;
 `;
 
-export const ErrorText = styled.h3`
-  width: 80%;
-  text-align: center;
-`;
-
 export const LoadingContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -91,8 +81,7 @@ export const LoadingGIF = styled.img`
   margin-bottom: 32px;
 `;
 
-export const LoadingText = styled.h3`
-  font-size: 16px;
+export const LoadingText = styled(Text)`
 `;
 
 export const PokemonImage = styled.img`
@@ -100,6 +89,6 @@ export const PokemonImage = styled.img`
   width: auto;
 `;
 
-export const Title = styled.h2`
+export const CapitalizedTitle = styled(MainTitle)`
   text-transform: capitalize;
 `;
