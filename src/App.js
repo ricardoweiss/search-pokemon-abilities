@@ -1,5 +1,5 @@
 import './App.css';
-import Home from "./Components/Home/Home";
+import Home from "./screens/Home";
 import GlobalStyle from './styles/globals'
 
 function App() {

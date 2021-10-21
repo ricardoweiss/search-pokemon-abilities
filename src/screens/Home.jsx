@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import sadPikachu from '../../assets/sadPikachu.png'
+import sadPikachu from '../assets/sadPikachu.png'
 import {
     Button,
     ButtonText, CapitalizedTitle,
@@ -7,9 +7,9 @@ import {
     Input, Page,
     PokemonImage,
 } from "./Home.styles";
-import Abilities from "./Abilities/Abilities";
-import Loading from "../Common/Loading/Loading";
-import Error from "../Common/Error/Error";
+import Abilities from "../Components/Home/Abilities/Abilities";
+import Loading from "../Components/Common/Loading/Loading";
+import Error from "../Components/Common/Error/Error";
 
 function Home() {
     const [inputValue, setInputValue] = useState('')

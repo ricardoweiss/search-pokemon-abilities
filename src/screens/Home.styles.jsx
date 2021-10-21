@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MainTitle } from "../Common/Texts.styles";
+import { MainTitle } from "../Components/Common/Texts.styles";
 
 export const Page = styled.section`
   display: flex;
