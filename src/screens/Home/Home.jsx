@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import sadPikachu from '../../assets/sadPikachu.png'
 import {
     CapitalizedTitle,
-    Container, HomeTitle,
-    Input, Page,
+    Container,
+    Page,
     PokemonImage,
 } from "./Home.styles";
 import Abilities from "../../Components/Home/Abilities/Abilities";
 import Loading from "../../Components/Common/Loading/Loading";
 import Error from "../../Components/Common/Error/Error";
-import Button from "../../Components/Common/Button/Button";
+import Searchbar from "../../Components/Home/Searchbar/Searchbar";
+import PokeInfo from "../../Components/Home/PokeInfo/PokeInfo";
 
 function Home() {
     const [inputValue, setInputValue] = useState('')
@@ -66,9 +67,12 @@ function Home() {
     return (
         <Page>
             <Container>
-                <HomeTitle>Please type a pokemon name below to see their abilities</HomeTitle>
-                <Input onKeyUp={onKeyUp} placeholder={'Type here'} type="text" value={inputValue} onChange={onChangeHandler}/>
-                <Button onClickHandler={fetchPokemon}>Search</Button>
+                <Searchbar
+                    fetchPokemon={fetchPokemon}
+                    onKeyUp={onKeyUp}
+                    inputValue={inputValue}
+                    onChangeHandler={onChangeHandler}
+                />
                 {error && (
                     <Error errorImage={sadPikachu} errorMessage={error}/>
                 )}
@@ -76,11 +80,7 @@ function Home() {
                     <Loading/>
                 )}
                 {!emptyList && !loading && (
-                    <>
-                        <PokemonImage src={pokemonImage} alt="pokemon image"/>
-                        <CapitalizedTitle>{pokemon} Abilities:</CapitalizedTitle>
-                        <Abilities abilities={pokemonAbilities}/>
-                    </>
+                    <PokeInfo pokemonAbilities={pokemonAbilities} pokemon={pokemon} pokemonImage={pokemonImage} />
                 )}
             </Container>
         </Page>
